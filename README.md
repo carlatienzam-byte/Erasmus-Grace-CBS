@@ -1,6 +1,6 @@
 # GRACE · Rozšířená realita (RA con marcador)
 
-Versión en checo de la plantilla de RA con marcador del portal Colombine. Al apuntar con el móvil o la tablet al logotipo de GRACE aparece el modelo 3D de los dados. Usa **A-Frame 1.5.0** y **MindAR 1.2.5**, y funciona en el navegador sin instalar ninguna app.
+Versión en checo de la plantilla de RA con marcador del portal Colombine. Al apuntar con el móvil o la tablet al logotipo de GRACE aparece el modelo 3D de Ruby y Sapphire. Usa **A-Frame 1.5.0** y **MindAR 1.2.5**, y funciona en el navegador sin instalar ninguna app.
 
 ## Contenido
 
@@ -19,15 +19,15 @@ Erasmus-Grace-CBS/
 
 Va en la raíz del repositorio `carlatienzam-byte/Erasmus-Grace-CBS`, con GitHub Pages activado desde la rama `main` (carpeta raíz). La dirección es `https://carlatienzam-byte.github.io/Erasmus-Grace-CBS/`, que es a la que apunta el QR del cartel. Tiene que abrirse con https para que funcione la cámara.
 
-## Optimización del modelo
+## Optimización del modelo (Ruby & Sapphire)
 
 | | Original | Optimizado |
 |---|---|---|
-| Triángulos | 105.214 | 52.606 |
+| Triángulos | 196.806 | 59.038 |
 | Texturas | 2 × 4096 px + 2048 px (≈ 200 MB en GPU) | 3 × 1024 px |
-| Tamaño | 20,3 MB | 0,34 MB |
+| Tamaño | 27,9 MB | 0,54 MB |
 
-Pasos con glTF-Transform: `resize 1024 → jpeg → dedup → prune → weld → simplify (ratio 0,5) → draco`. Sin WebP.
+Pasos con glTF-Transform: `resize 1024 → jpeg → dedup → prune → weld → simplify (ratio 0,3) → draco`. Sin WebP. El archivo conserva el nombre `assets/grace-dice.glb`; en `index.html` se carga como `grace-dice.glb?v=2` para que los móviles no muestren el modelo anterior desde la caché (si se vuelve a cambiar el modelo, sube el número a `?v=3`).
 
 ## Ajustes rápidos (en `index.html`)
 

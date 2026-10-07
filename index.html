@@ -317,7 +317,8 @@
     loading-screen="enabled: false">
 
     <a-assets timeout="30000">
-      <a-asset-item id="modelo-glb" src="assets/grace-dice.glb"></a-asset-item>
+      <!-- ?v=2: obliga al navegador a descargar el modelo nuevo (Ruby & Sapphire) en vez de usar el anterior guardado en caché -->
+      <a-asset-item id="modelo-glb" src="assets/grace-dice.glb?v=2"></a-asset-item>
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false" cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-camera>
@@ -337,7 +338,7 @@
           <a-entity id="sombra" sombra-suave scale="0.9 1 0.35" position="0 0.002 0"></a-entity>
           <a-entity id="peana" peana>
             <a-entity id="aparicion" scale="0.001 0.001 0.001">
-              <!-- El GLB mide 0,22 × 0,15 u con el origen en la base: escalado ×3,5 (≈ 3/4 del ancho del logo); no hace falta elevarlo -->
+              <!-- El GLB (Ruby & Sapphire) mide 0,21 × 0,15 u con el origen en la base: escalado ×3,5 (≈ 3/4 del ancho del logo); no hace falta elevarlo -->
               <a-entity id="modelo" gltf-model="#modelo-glb" scale="3.5 3.5 3.5" position="0 0 0"></a-entity>
             </a-entity>
           </a-entity>
